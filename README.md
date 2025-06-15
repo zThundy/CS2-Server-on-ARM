@@ -1,8 +1,8 @@
 # CS2 Server on ARM with Box64
 
-In this guide I will be explaining what I did to make a simple CS2 server run on ARM. 
-You can potentially follow these steps to make any kind of servers, but you will be on your own since I'm not an *indian tech support guy* 😶 (love to all my fellow L1 ❤)
-If you expect me to write a serious guide, you are wrong.
+In this guide I will be explaining what I did to make a simple CS2 server run on ARM.<br>
+You can potentially follow these steps to make any kind of servers, but you will be on your own since I'm not an *indian tech support guy* 😶 (love to all my fellow L1 ❤)<br>
+If you expect me to write a serious guide, you are wrong.<br>
 Don't care what you think, never will 😁.
 
 ## Basic info
@@ -28,8 +28,8 @@ sudo -u steam -s
 
 ## Box64 is very cool
 After setting up the user, I proceeded to download box64 in the home directory.
-I followed the [official guide](https://github.com/ptitSeb/box64/blob/main/docs/COMPILE.md).
-I will be typing all the commands I executed anyway. Do whatever you want.
+I followed the [official guide](https://github.com/ptitSeb/box64/blob/main/docs/COMPILE.md).<br>
+I will be typing all the commands I executed anyway. Do whatever you want.<br>
 **Keep an eye on the official guide, since there are some examples for `Raspberry Pi`**
 ```bash
 git clone https://github.com/ptitSeb/box64.git
@@ -41,8 +41,8 @@ mkdir build; cd build; cmake .. -D ARM_DYNAREC=ON -D CMAKE_BUILD_TYPE=RelWithDeb
 make -j4
 sudo make install
 ```
-I decided that I wanted to add BOX32 to the compiled box64 since I didn't know if the standard compile would work with CS2. I was throwing shit at the wall to see what was sticking. (it worked in the end so 🤷‍♂️)
-since it was my first time installing box64, I executed
+I decided that I wanted to add BOX32 to the compiled box64 since I didn't know if the standard compile would work with CS2. I was throwing shit at the wall to see what was sticking. (it worked in the end so 🤷‍♂️)<br>
+Since it was my first time installing box64, I executed
 ```bash
 sudo systemctl restart systemd-binfmt
 ```
@@ -50,11 +50,11 @@ After the build, the amazing team at box64 added a command to test if the instal
 ```bash
 ctest
 ```
-![alt text](./images/ctest_pass.png)
+![Ctest](./images/ctest_pass.png)<br>
 If tests passes then you are good to go 😄
 
 ## Entering steamcmd territory now, shit about to go crazy
-So, VALVE is pretty bad at writing docs, always has been, but following the [guide on how to install steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD#Manually), gave me a bit of an help.
+So, VALVE is pretty bad at writing docs, always has been, but following the [guide on how to install steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD#Manually), gave me a bit of an help.<br>
 ### ***DO NOT INSTALL USING APT*** shit wont work. Follow the manual installation.
 I created a new folder
 ```bash
@@ -72,13 +72,16 @@ After it finished downloading, I exited it with `quit` and created a new folder 
 ```bash
 mkdir ~/cs2
 ```
-where I then installed the server following [this guide](https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers) (partially).
+where I then installed the server following [this guide](https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers) (partially).<br>
 After creating the folder I run steamcmd again and executed these commands:
 ```bash
-force_install_dir ~/cs2
+force_install_dir /home/steam/cs2
 login anonymous
 app_update 730 validate
 ```
 Since it uses box64, this download and validation will take **AGES**, but hey... what can you do.
 
 ## This is where the easy part ends...
+So, apparently when steam was installed, it was supposed to create a folder `.steam` in the /home/steam directory; **IT FUCKING DIDN'T**
+I did
+```bash
