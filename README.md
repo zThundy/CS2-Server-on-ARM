@@ -21,7 +21,7 @@ Don't care what you think, never will 😁.
 ## Tested on
 So far I have tested this on:
 - Oracle cloud ARM machine *free tier* (I'm broke)
-- Raspberry Pi 5
+- Raspberry Pi 5 (steamcli worked but download kept crashing the Pi)
 
 ## Basic info and shit you need
 - Linux machine from [Oracle Cloud](https://www.oracle.com/it/cloud/sign-in.html?intcmp=OcomFreeTier) *free tier* 
@@ -56,6 +56,11 @@ cd
 git clone https://github.com/ptitSeb/box64.git
 cd box64/
 ```
+Now we need to install cmake (if you already have it, update it)
+```bash
+sudo apt install cmake
+```
+
 and compiled it with this magic
 ```bash
 mkdir build; cd build; cmake .. -D ARM_DYNAREC=ON -D CMAKE_BUILD_TYPE=RelWithDebInfo -D BOX32=ON -D BOX32_BINFMT=ON
@@ -79,6 +84,7 @@ So, VALVE is pretty bad at writing docs, always has been, but following the [gui
 ### ***DO NOT INSTALL USING APT*** shit wont work. Follow the manual installation.
 I created a new folder
 ```bash
+cd
 mkdir steamclient
 cd steamclient
 ```
@@ -87,7 +93,7 @@ and downloaded and extracted the tar in this folder with
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 tar -xvzf steamcmd_linux.tar.gz 
 ```
-after downloading the steamcmd client, I opened it using ./steamcmd.sh
+after downloading the steamcmd client, I opened it using `./steamcmd.sh`
 Since box64 was already installed on the machine, it was detected and was being used automatically.
 
 After it finished downloading, I exited it with `quit` and created a new folder in the home with
