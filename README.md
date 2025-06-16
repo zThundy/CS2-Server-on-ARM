@@ -95,6 +95,8 @@ cp ~/steamclient/linux64/steamclient.so ./steamclient.so
 ```
 adding the client to the home folder.
 
+**Note: sometimes cs2 installation just fucks up and the server won't start anymore. If you encounter this, just validate the installation using `app_update` in steamcli.**
+
 Now... steamclient is installed, cs2 server is downloaded, we can launch it.
 in the folder `/home/steam` execute
 ```bash
@@ -106,3 +108,6 @@ After this, you should be good to go.
 
 ## Networking
 Just open the port 27015 so that people can connect to the server 😬
+
+## Known issues
+- Plugins just don't work for me. If you manage to let em work, good for you 😊 (for real tho, if you do make them work, post your findings somewere so that I can add them to this repo)
