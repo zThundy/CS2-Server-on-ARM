@@ -12,7 +12,7 @@ Don't care what you think, never will 😁.
   * [Basic info and shit you need](#basic-info-and-shit-you-need)
   * [User setup](#user-setup)
   * [Box64 is very cool](#box64-is-very-cool)
-  * [Entering steamcmd territory now, shit about to go crazy](#entering-steamcmd-territory-now--shit-about-to-go-crazy)
+  * [Entering steamcmd territory now, shit about to go crazy](#entering-steamcmd-territory-now-shit-about-to-go-crazy)
   * [This is where the easy part ends...](#this-is-where-the-easy-part-ends)
     + [Optional](#--optional--)
   * [Networking](#networking)
