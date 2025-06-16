@@ -52,6 +52,7 @@ I followed the [official guide](https://github.com/ptitSeb/box64/blob/main/docs/
 I will be typing all the commands I executed anyway. Do whatever you want.<br>
 **Keep an eye on the official guide, since there are some examples for `Raspberry Pi`**
 ```bash
+cd
 git clone https://github.com/ptitSeb/box64.git
 cd box64/
 ```
