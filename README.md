@@ -5,6 +5,19 @@ You can potentially follow these steps to make any kind of servers, but you will
 If you expect me to write a serious guide, you are wrong.<br>
 Don't care what you think, never will 😁.
 
+## Table of contents
+- [CS2 Server on ARM with Box64](#cs2-server-on-arm-with-box64)
+  * [Table of content](#table-of-content)
+  * [Tested on](#tested-on)
+  * [Basic info and shit you need](#basic-info-and-shit-you-need)
+  * [User setup](#user-setup)
+  * [Box64 is very cool](#box64-is-very-cool)
+  * [Entering steamcmd territory now, shit about to go crazy](#entering-steamcmd-territory-now--shit-about-to-go-crazy)
+  * [This is where the easy part ends...](#this-is-where-the-easy-part-ends)
+    + [Optional](#--optional--)
+  * [Networking](#networking)
+  * [Known issues](#known-issues)
+
 ## Tested on
 So far I have tested this on:
 - Oracle cloud ARM machine *free tier* (I'm broke)
