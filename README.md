@@ -7,7 +7,7 @@ Don't care what you think, never will 😁.
 
 ## Table of contents
 - [CS2 Server on ARM with Box64](#cs2-server-on-arm-with-box64)
-  * [Table of content](#table-of-content)
+  * [Table of content](#table-of-contents)
   * [Tested on](#tested-on)
   * [Basic info and shit you need](#basic-info-and-shit-you-need)
   * [User setup](#user-setup)
