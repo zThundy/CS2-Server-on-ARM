@@ -5,6 +5,11 @@ You can potentially follow these steps to make any kind of servers, but you will
 If you expect me to write a serious guide, you are wrong.<br>
 Don't care what you think, never will 😁.
 
+## Tested on
+So far I have tested this on:
+- Oracle cloud ARM machine *free tier* (I'm broke)
+- Raspberry Pi 5
+
 ## Basic info and shit you need
 - Linux machine from [Oracle Cloud](https://www.oracle.com/it/cloud/sign-in.html?intcmp=OcomFreeTier) *free tier* 
 - OS is Ubuntu 22.04.5 since I'm a **basic bitch** ![Neofetch](./images/neofetch.png)
@@ -91,6 +96,7 @@ I executed
 ```bash
 mkdir .steam
 mkdir .steam/sdk64
+cd .steam/sdk64
 cp ~/steamclient/linux64/steamclient.so ./steamclient.so
 ```
 adding the client to the home folder.
@@ -101,13 +107,61 @@ Now... steamclient is installed, cs2 server is downloaded, we can launch it.
 in the folder `/home/steam` execute
 ```bash
 touch start_cs2.sh
-echo "BOX64_DYNAREC_LOG=0 BOX64_SSE42=1 BOX64_LOG=0 BOX64_ADDLIBS=/home/steam/cs2/game/bin/linuxsteamrt64/libv8_libcpp.so:/home/steam/cs2/game/bin/linuxsteamrt64/libv8_libcpp.so:/home/steam/cs2/game/csgo/bin/linuxsteamrt64/libserver_valve.so:/home/steam/steamclient/linux64/steamclient.so /home/steam/cs2/game/bin/linuxsteamrt64/cs2 -dedicated -port 27015 +exec autoexec.cfg" > start_cs2.sh
+echo "BOX64_DYNAREC_LOG=0 BOX64_SSE42=1 BOX64_LOG=0 BOX64_ADDLIBS=/home/steam/cs2/game/bin/linuxsteamrt64/libv8_libcpp.so:/home/steam/steamclient/linux64/steamclient.so /home/steam/cs2/game/bin/linuxsteamrt64/cs2 -dedicated -port 27015 +exec autoexec.cfg" > start_cs2.sh
 ```
 this will create a simple start script for your server with the missing libraries that won't make the server start.<br>
+
+### **Optional**
+Since I didn't want to execute commands and I created the server to practice on a practice map (I wanted a server so I could have the real shitty cs2 experience with ping lag) I also added an `autoexec.cfg` file in the path `/home/steam/cs2/game/csgo/cfg` with this stuff inside:
+```cfg
+sv_setsteamaccount <REDACTED>
+hostname "<REDACTED>"
+map de_dust2
+host_workshop_map 3442607572
+sv_password "<REDACTED>"
+mp_humanteam any
+mp_ignore_round_win_conditions 0
+mp_round_restart_delay 0
+# host_workshop_map 3072369998
+mp_afterroundmoney 16000
+mp_maxmoney 16000
+mp_startmoney 16000
+mp_freezetime 0
+mp_restartgame 1
+mp_warmuptime 5
+sv_cheats 1
+sv_infinite_ammo 1
+```
+I don't know if you want to change stuff, bit this is a very simple config.<br>
+To populate `sv_steamaccount`:
+- You must go to [this url](https://steamcommunity.com/dev/managegameservers) and create a new key to your name so that the server can authenticate with VALVE.<br>
+- In `AppID` put `730` and in the `Name` put whatever you want.<br>
+
+**DO NOT SHARE THIS STRING WITH ANYONE**
+
 After this, you should be good to go.
 
 ## Networking
 Just open the port 27015 so that people can connect to the server 😬
 
+Anyway for networking I just added the rules to Oracle Cloud and ufw by doing
+```bash
+sudo ufw allow 27015
+```
+After that you can check if iptables has the rules added by executing
+```bash
+sudo iptables --list-rules | grep 27015
+```
+The result should look something like this
+```bash
+....
+-A ufw-user-input -p tcp -m tcp --dport 27015 -j ACCEPT
+-A ufw-user-input -p udp -m udp --dport 27015 -j ACCEPT
+....
+```
+
+If you have any issues, please do not hesitate to open an [issue](https://github.com/zThundy/CS2-Server-on-ARM/issues). I will try to answer questions, but, as I said at the beginning, I'm not tech support 😁
+
 ## Known issues
 - Plugins just don't work for me. If you manage to let em work, good for you 😊 (for real tho, if you do make them work, post your findings somewere so that I can add them to this repo)
+- Metamod and CounterStrikeSharp give a Segfault, as described [here](https://github.com/ptitSeb/box64/issues/2753)
