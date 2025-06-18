@@ -98,7 +98,7 @@ Since box64 was already installed on the machine, it was detected and was being 
 
 After it finished downloading, I exited it with `quit` and created a new folder in the home with
 ```bash
-mkdir ~/cs2
+mkdir /home/steam/cs2
 ```
 where I then installed the server following [this guide](https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers) (partially).<br>
 After creating the folder I run steamcmd again and executed these commands:
@@ -110,14 +110,12 @@ app_update 730 validate
 Since it uses box64, this download and validation will take **AGES**, but hey... what can you do.
 
 ## This is where the easy part ends...
-So, apparently when steam was installed, it was supposed to create a folder `.steam` in the /home/steam directory; **IT FUCKING DIDN'T**<br>
-*Before doing this step, please check if the folder exist and if there is steamclient.so inside*
+So, apparently when steam was installed, it was supposed to create a folder `.steam` in the `/home/steam` directory; **IT FUCKING DIDN'T**<br>
+*Before doing this step, please check if `/home/steam/.steam/sdk64` folder exists and if there is `steamclient.so` inside*
 I executed
 ```bash
-mkdir .steam
-mkdir .steam/sdk64
-cd .steam/sdk64
-cp ~/steamclient/linux64/steamclient.so ./steamclient.so
+mkdir -p /home/steam/.steam/sdk64
+ln -s /home/steam/steamclient/linux64/steamclient.so /home/steam/.steam/sdk64/
 ```
 adding the client to the home folder.
 
