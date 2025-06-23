@@ -5,6 +5,9 @@ You can potentially follow these steps to make any kind of servers, but you will
 If you expect me to write a serious guide, you are wrong.<br>
 Don't care what you think, never will 😁.
 
+If you like this project, please give this repo a ✨<br>
+![Star](./images/star.gif)
+
 ## Table of contents
 - [CS2 Server on ARM with Box64](#cs2-server-on-arm-with-box64)
   * [Table of content](#table-of-contents)
