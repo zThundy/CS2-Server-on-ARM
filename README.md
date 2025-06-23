@@ -1,9 +1,11 @@
 # CS2 Server on ARM with Box64
 
-In this guide I will be explaining what I did to make a simple CS2 server run on ARM.<br>
-You can potentially follow these steps to make any kind of servers, but you will be on your own since I'm not an *indian tech support guy* 😶 (love to all my fellow L1 ❤)<br>
-If you expect me to write a serious guide, you are wrong.<br>
-Don't care what you think, never will 😁.
+**Before we start**
+- In this guide I will be explaining what I did to make a simple CS2 server run on ARM.
+- You can potentially follow these steps to make any kind of servers, but you will be on your own since I'm not an *indian tech support guy* 😶 (love to all my fellow L1 ❤)
+- If you expect me to write a serious guide, you are wrong.
+- Don't care what you think, never will 😁.<br>
+*(Obv I'm joking. I love OS and I appreciate any input you have on this project)*
 
 If you like this project, please give this repo a ✨<br>
 ![Star](./images/star.gif)
