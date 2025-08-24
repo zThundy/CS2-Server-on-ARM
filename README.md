@@ -185,6 +185,6 @@ The result should look something like this
 
 If you have any issues, please do not hesitate to open an [issue](https://github.com/zThundy/CS2-Server-on-ARM/issues). I will try to answer questions, but, as I said at the beginning, I'm not tech support 😁
 
-## Known issues
+## Known issues 🚀
 - Plugins just don't work for me. If you manage to let em work, good for you 😊 (for real tho, if you do make them work, post your findings somewere so that I can add them to this repo)
 - Metamod and CounterStrikeSharp give a Segfault, as described [here](https://github.com/ptitSeb/box64/issues/2753)
