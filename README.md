@@ -1,4 +1,4 @@
-# CS2 Server on ARM with Box64
+# CS2 Server on ARM with Box64 🚀
 
 **Before we start**
 - In this guide I will be explaining what I did to make a simple CS2 server run on ARM.
